@@ -2,6 +2,8 @@ Pelican theme - SoMA
 ====================
 
 
+NOTE: This is my customized version of SoMA2 pelican theme over at "https://github.com/getpelican/pelican-themes/tree/master/SoMA2".
+
 Features
 --------
 * Simple and clean interface.
