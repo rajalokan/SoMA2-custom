@@ -33,22 +33,27 @@
   <!-- <header id="banner" class="body"> -->
   <!--               <h1><a href="{{ SITEURL }}/"><img src="http://www.launchyard.com/images/logo.png" />{% if SITESUBTITLE %}<strong>{{ SITESUBTITLE }}</strong>{% endif %}</a></h1> -->
   <!--       </header> --> 
-
+  <div class="logo-bg">
   <div class="LaunchyardDetail">
     <!-- <p> -->
     <!-- <img src="{{ SITEURL }}/theme/images/blue-pin.png" width="100" height="100" alt="Graph icon"> -->
     <!-- </p> -->
+    <p>
+    <a href="/">
+    <img src="{{ SITEURL }}/theme/images/cover.gif" class="cover-photo"/>
+</a></p>
     <p><a id="sitesubtitle" href="{{ SITEURL }}/">{% if SITESUBTITLE %}{{ SITESUBTITLE }}{% endif %}</a></p>
     {% if SITETAGLINE %}<p id="sitetagline">{{ SITETAGLINE }}</p>{% endif %}
-    <p><a id="aboutlink" href="{{ SITEURL }}/pages/about.html">about</a></p>
-    <p>
-        <a id="aboutlink" href="{{ SITEURL }}/pages/about.html">
-            <img src="images/icons/twitter.png" />
-        </a>
-    </p>
-    <p><a id="aboutlink" href="{{ SITEURL }}/pages/about.html">about</a></p>
-    <p><a id="aboutlink" href="{{ SITEURL }}/pages/about.html">about</a></p>
 
+    {% if SOCIAL %}
+        {% for item in SOCIAL %}
+            <p>
+                <a id="aboutlink" href="{{ item[1] }}">
+                    <img src="{{SITEURL}}/theme/images/icons/{{item[0]}}.png" class="social-icon" />
+                </a>
+            </p>         
+        {% endfor %} 
+    {% endif %}
     <!-- <ul> -->
     <!--   <li><a href="{{ SITEURL }}/pages/about.html">about</a></li> -->
       <!-- <li><a href="{{ SITEURL }}/pages/about.html">articles</a></li> -->
@@ -68,6 +73,7 @@
       <!-- {% endfor %} -->
 
 <!-- {% include 'categories.html' %} -->
+    </div>
   </div>
 
         {% block content %}
